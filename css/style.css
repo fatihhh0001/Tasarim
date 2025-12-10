@@ -1,0 +1,21 @@
+/* css/style.css */
+body {
+  background-color: #f8f9fa; /* Göz yormayan açık gri */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Kartların (Kutuların) Görünümü */
+.kutu {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Hafif gölge */
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+
+/* Tablo Başlıkları */
+.table thead {
+  background-color: #343a40; /* Koyu gri başlık */
+  color: #ffffff;
+}
