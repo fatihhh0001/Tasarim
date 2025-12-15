@@ -2,7 +2,15 @@
 
 <div class="row mb-4 text-center">
     
-    <div class="col-md-4">
+    <div class="col-md-3">
+        <div class="kutu border-start border-4 border-success py-4 h-100">
+            <h5 class="text-secondary">Toplam Ciro</h5>
+            <h2 class="text-success fw-bold"><?= number_format($ciro, 2) ?> ₺</h2>
+            <i class="fas fa-coins fa-2x text-success opacity-50"></i>
+        </div>
+    </div>
+
+    <div class="col-md-3">
         <div class="kutu border-start border-4 border-primary py-4 h-100">
             <h5 class="text-secondary">Kayıtlı Müşteri</h5>
             <h2 class="text-primary fw-bold"><?= $musteri_sayisi ?></h2>
@@ -10,7 +18,7 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="kutu border-start border-4 border-info py-4 h-100">
             <h5 class="text-secondary">Kayıtlı Hasta</h5>
             <h2 class="text-info fw-bold"><?= $hasta_sayisi ?></h2>
@@ -18,7 +26,7 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="kutu border-start border-4 border-danger py-4 h-100">
             <h5 class="text-secondary">Kritik İlaç</h5>
             <h2 class="text-danger fw-bold"><?= $kritik_stok ?></h2>
@@ -40,7 +48,7 @@
                         <th>Tarih</th>
                         <th>Hasta</th>
                         <th>Sahip</th>
-                        <th>İşlem Tutarı</th>
+                        <th>Tutar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,10 +57,10 @@
                         <td><?= date('d.m H:i', strtotime($hareket['tarih_saat'])) ?></td>
                         <td class="fw-bold"><?= $hareket['hayvan_adi'] ?></td>
                         <td><?= $hareket['sahip'] ?></td>
-                        <td class="text-success"><?= number_format($hareket['yekun_tutar'], 2) ?> ₺</td>
+                        <td class="text-success fw-bold"><?= number_format($hareket['yekun_tutar'], 2) ?> ₺</td>
                     </tr>
                     <?php endforeach; ?>
-                    <?php if(empty($son_hareketler)) echo "<tr><td colspan='4'>Henüz işlem yok.</td></tr>"; ?>
+                    <?php if(empty($son_hareketler)) echo "<tr><td colspan='4' class='text-muted'>Henüz işlem yok.</td></tr>"; ?>
                 </tbody>
             </table>
         </div>
@@ -70,7 +78,7 @@
                     <span class="badge bg-danger rounded-pill"><?= $ilac['stok_adet'] ?> Adet</span>
                 </li>
                 <?php endforeach; ?>
-                <?php if(empty($biten_ilaclar)) echo "<li class='list-group-item'>Stok sorunu yok.</li>"; ?>
+                <?php if(empty($biten_ilaclar)) echo "<li class='list-group-item text-muted'>Stok sorunu yok.</li>"; ?>
             </ul>
         </div>
     </div>
